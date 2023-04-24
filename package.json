@@ -1,0 +1,33 @@
+{
+  "name": "nodepoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "gulp": "4.0.2",
+    "mongodb": "^3.6.3",
+    "node-fetch": "^2.6.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "bootstrap-star-rating": "^4.0.6",
+    "bunyan": "1.8.14",
+    "diff": "4.0.2",
+    "express": "4.17.1",
+    "express-handlebars": "3.1.0",
+    "js-beautify": "1.10.3",
+    "jsonwebtoken": "^9.0.0",
+    "neat-csv": "^6.0.1",
+    "tick-time": "^1.0.1",
+    "uglify-js": "3.8.0",
+    "unirest": "0.6.0",
+    "yargs": "15.3.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
