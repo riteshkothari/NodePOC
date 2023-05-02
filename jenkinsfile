@@ -4,8 +4,7 @@ standardPipeline {
     nuget_targets = []
     skipFeatureBuilds = true
     publish_artifacts = [
-        "environment" : [
-            "staging-branch" : [
+        "staging-branch" : [
                 "staging" : [ 
                     "items" : "configuration", 
                     "tenants" : [
@@ -15,11 +14,10 @@ standardPipeline {
                 "development" : [ 
                     "items" : "configuration, questionnaire"
                 ]
-            ],
+        ],
         "master-branch": [
             "cae-prod-1": [ "items": "configuration", "tenants" : ["include": "base1"] ],
             "cae-prod-2": [ "items": "configuration, questionnaire, lookup, rules", "tenants" : ["exclude": "base2"] ]
-            ]
         ]
     ]
 }
