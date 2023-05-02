@@ -4,20 +4,30 @@ standardPipeline {
     nuget_targets = []
     skipFeatureBuilds = true
     publish_artifacts = [
-    "staging-branch" : [
-        "staging" : [ 
-            "items" : "configuration", 
-            "tenants" : [
-                "exclude": "sofi-staging"
+        "staging-branch" : [
+            "development" : [ 
+                "artifacts" : ["configuration", "questionnaire"]
+            ],
+            "staging" : [ 
+                "artifacts" : ["configuration"], 
+                "tenants" : [
+                    "exclude": "sofi-staging"
+                ]
             ]
         ],
-        "development" : [ 
-            "items" : "configuration, questionnaire"
+        "master-branch": [
+            "cae-prod-1": [
+                "artifacts": ["configuration"],
+                "tenants" : [
+                    "include": "base1"
+                ]
+            ],
+            "cae-prod-2": [
+                "artifacts": ["configuration", "questionnaire", "lookup", "rules"],
+                "tenants" : [
+                    "exclude": "base2"
+                ] 
+            ]
         ]
-    ],
-   "master-branch": [
-       "cae-prod-1": [ "items": "configuration", "tenants" : ["include": "base1"] ],
-       "cae-prod-2": [ "items": "configuration, questionnaire, lookup, rules", "tenants" : ["exclude": "base2"] ]
     ]
-]
 }
