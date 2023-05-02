@@ -1,0 +1,25 @@
+standardPipeline {
+    layer = "docitt"
+    nuget_server = "http://nuget.ci/api/v2"
+    nuget_targets = []
+    skipFeatureBuilds = true
+    publish_artifacts = [
+        "environment" : [
+            "staging-branch" : [
+                "staging" : [ 
+                    "items" : "configuration", 
+                    "tenants" : [
+                        "exclude": "sofi-staging"
+                    ]
+                ],
+                "development" : [ 
+                    "items" : "configuration, questionnaire"
+                ]
+            ],
+        "master-branch": [
+            "cae-prod-1": [ "items": "configuration", "tenants" : ["include": "base1"] ],
+            "cae-prod-2": [ "items": "configuration, questionnaire, lookup, rules", "tenants" : ["exclude": "base2"] ]
+            ]
+        ]
+    ]
+}
